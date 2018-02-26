@@ -163,7 +163,7 @@ if __name__ == '__main__':
 		if check_redis(options.host,options.port,options.pwd,options.db) == 1:
 				print "Redis cluster cannot be certified"
 	else:
-		if check_redis(options.host,options.port) == 0:
-			r_instance(options.host,options.port)
-		elif check_redis(options.host,options.port) == 1:
-			r_cluster(options.host,options.port)
+		if check_redis(options.host,options.port,options.db) == 0:
+			r_instance(options.host,options.port,options.db)
+		elif check_redis(options.host,options.port,options.db) == 1:
+			r_cluster(options.host,options.port,options.db)
